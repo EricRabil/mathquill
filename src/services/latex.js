@@ -1,5 +1,5 @@
 // Parser MathBlock
-var latexMathParser = window['latexMathParser'] = (function() {
+var latexMathParser = (function() {
   function commandToBlock(cmd) { // can also take in a Fragment
     var block = MathBlock();
     cmd.adopt(block, 0, 0);

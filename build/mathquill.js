@@ -569,6 +569,7 @@ var Fragment = P(function(_) {
   };
 });
 
+window['MathQuillAPI'] = {};
 
 /**
  * Registry of LaTeX commands and commands created when typing
@@ -576,8 +577,7 @@ var Fragment = P(function(_) {
  *
  * (Commands are all subclasses of Node.)
  */
-var LatexCmds = {}, CharCmds = {};
-/********************************************
+var LatexCmds = window['MathQuillAPI']['LatexCmds'] = {}, CharCmds = window['MathQuillAPI']['CharCmds'] = {};/********************************************
  * Cursor and Selection "singleton" classes
  *******************************************/
 
@@ -2011,7 +2011,7 @@ Controller.open(function(_) {
   _.selectRight = function() { return this.selectDir(R); };
 });
 // Parser MathBlock
-var latexMathParser = window['latexMathParser'] = (function() {
+var latexMathParser = (function() {
   function commandToBlock(cmd) { // can also take in a Fragment
     var block = MathBlock();
     cmd.adopt(block, 0, 0);

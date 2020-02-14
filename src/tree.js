@@ -364,6 +364,7 @@ var Fragment = P(function(_) {
   };
 });
 
+window['MathQuillAPI'] = {};
 
 /**
  * Registry of LaTeX commands and commands created when typing
@@ -371,4 +372,4 @@ var Fragment = P(function(_) {
  *
  * (Commands are all subclasses of Node.)
  */
-var LatexCmds = {}, CharCmds = {};
+var LatexCmds = window['MathQuillAPI']['LatexCmds'] = {}, CharCmds = window['MathQuillAPI']['CharCmds'] = {};
